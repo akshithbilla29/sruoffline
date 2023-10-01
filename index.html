@@ -65,18 +65,22 @@
         function formlogin() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-
+        
             // Define the range of valid usernames and passwords
             var validUsernameRange = /^2203a51[0-9]{3}$/;
             var validPasswordRange = /^2203a51[0-9]{3}$/;
-
+        
             if (validUsernameRange.test(username) && validPasswordRange.test(password)) {
-                
-                window.location.href = "mainpage.html"; // Redirect to the courses.html page
+                // Set the login status to true (user is logged in)
+                sessionStorage.setItem("loggedIn", "true");
+        
+                // Redirect to the mainpage.html page
+                window.location.href = "mainpage.html";
             } else {
                 alert("Invalid Details!");
             }
         }
+        
     </script>
 </body>
 </html>
